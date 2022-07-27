@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import CartWidget from "./CartWidget";
-import { FaBeer } from 'react-icons/fa';
+
 
 
 function NavBar() {
