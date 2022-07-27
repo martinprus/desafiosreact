@@ -1,9 +1,13 @@
-import Header from "./Header";
+import Header from "./componentes/Header";
+import Principal from "./componentes/Principal";
+import Footer from "./componentes/Footer";
 
 function App() {
   return (
     <>
-      <Header />
+      <Header p1 = "Hola" p2 = "25"/>
+      <Principal/>
+      <Footer/>
     </>
   );
 }
