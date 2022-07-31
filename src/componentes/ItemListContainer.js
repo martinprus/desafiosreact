@@ -6,7 +6,7 @@ function ItemListContainer(props) {
       <h1 className="h1 text-center text-secondary">
         {props.greeting}: <strong className="text-danger">{props.nombre}</strong>
       </h1>
-      <ItemCount stock = {0}/>
+      <ItemCount stock = {4}/>
       
     </>
   );
