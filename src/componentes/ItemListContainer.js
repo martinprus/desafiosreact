@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import ItemCount from "./ItemCount";
 
 function ItemListContainer(props) {  
@@ -7,7 +6,7 @@ function ItemListContainer(props) {
       <h1 className="h1 text-center text-secondary">
         {props.greeting}: <strong className="text-danger">{props.nombre}</strong>
       </h1>
-      <ItemCount/>
+      <ItemCount stock = {0}/>
       
     </>
   );
