@@ -6,17 +6,19 @@ function ItemCount(props) {
   const setContador = resultado[1];
 
   function aumentarContador() {
-    if (contador<=props.stock && contador != 0){
-    let newState = contador++;
-    setContador(newState);}
-    else{alert("No hay stock disponible")}
+    if (contador < props.stock && props.stock > 0) {
+      setContador(contador + 1);
+    } else {
+      alert("Stock agotado");
+    }
   }
 
   function disminuirContador() {
-    if(contador>=0 && contador != 0){
-    let newState = contador--;
-    setContador(newState);}
-    else{alert("Valor invalido")}
+    if (contador > 0) {
+      setContador(contador - 1);
+    } else {
+        alert("La cantidad no puede ser menor a cero")
+    }
   }
 
   function resetearContador() {
@@ -27,7 +29,9 @@ function ItemCount(props) {
   return (
     <div className="container text-center">
       <div className="row text-center ">
-        <p className="lead border border-5"><strong>{contador}</strong></p>
+        <p className="lead border border-5">
+          <strong>{contador}</strong>
+        </p>
       </div>
       <div className="row">
         <div className="col">
@@ -36,10 +40,24 @@ function ItemCount(props) {
           </button>
         </div>
         <div className="col">
-          <button onClick={resetearContador} className="btn btn-warning btn-lg">Resetear Contador</button>
+          <button onClick={resetearContador} className="btn btn-warning btn-lg">
+            Resetear Contador
+          </button>
         </div>
         <div className="col">
-          <button onClick={aumentarContador} className="btn btn-success btn-lg">Aumentar Contador</button>
+          <button onClick={aumentarContador} className="btn btn-success btn-lg">
+            Aumentar Contador
+          </button>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <button
+            onClick={aumentarContador}
+            className="btn btn-primary btn-lg mt-4"
+          >
+            Aumentar Contador
+          </button>
         </div>
       </div>
     </div>
