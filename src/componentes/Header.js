@@ -12,7 +12,6 @@ function Header(props) {
           height="160"
         />
       </span>
-    <p>El contador es: {props.contador}</p>
       <NavBar />
     </header>
   );
