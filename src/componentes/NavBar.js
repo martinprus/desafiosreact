@@ -3,10 +3,10 @@ import CartWidget from "./CartWidget";
 
 
 
-function NavBar() {
+function NavBar(props) {
   return (
     <nav className="navbar navbar-light d-flex justify-content-end">
-      <a className="nav-item nav-link mx-2" href="google.com">
+            <a className="nav-item nav-link mx-2" href="google.com">
         <span className="material-symbols-outlined">pageview</span>{" "}
         CarritoProductos
       </a>
