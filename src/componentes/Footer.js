@@ -1,6 +1,6 @@
 import NavBar from "./NavBar"
 
-function Footer(props) {
+function Footer() {
   return (
     <>
     <NavBar/>
