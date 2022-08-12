@@ -7,12 +7,15 @@ function ItemListContainer(props) {
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
+
   useEffect(() => {
     customFetch(products).then((data) => {
       setLoading(true);
       setListProducts(data);
     });
   }, []);
+
+  
 
   return (
     <>

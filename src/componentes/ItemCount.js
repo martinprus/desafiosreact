@@ -53,12 +53,12 @@ function ItemCount(props) {
       </div>
       <div className="row">
         <div className="col-6">
-          <button onClick={disminuirContador} className="btn btn-danger m-3">
+          <button onClick={disminuirContador} className="btn btn-danger m-1">
             Disminuir Contador
           </button>
         </div>
         <div className="col-6">
-          <button onClick={aumentarContador} className="btn btn-success m-3">
+          <button onClick={aumentarContador} className="btn btn-success m-1">
             Aumentar Contador
           </button>
         </div>
