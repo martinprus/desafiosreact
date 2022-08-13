@@ -28,5 +28,15 @@ export const products = [
     stock: 3,
     precio: 12000,
   },
+  {
+    id: 4,
+    image: "https://rosadenena.com.ar/wp-content/uploads/2020/07/glynTLGH.jpeg",
+    product: "Campera de jean",
+    category: "camperas",
+    description: "Campera de jean trucha",
+    stock: 2,
+    precio: 9000,
+  }
+  
 ];
 

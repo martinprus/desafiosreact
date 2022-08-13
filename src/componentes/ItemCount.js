@@ -45,10 +45,10 @@ function ItemCount(props) {
     });
   }
   return (
-    <div className="container text-center">
+    <div className="container text-center mt-5">
       <div className="row text-center ">
         <p className="lead border border-5">
-          La cantidad de items es: <strong>{contador}</strong>
+          Cantidad: <strong>{contador}</strong>
         </p>
       </div>
       <div className="row">

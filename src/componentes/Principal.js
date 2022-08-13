@@ -1,18 +1,26 @@
 import ItemListContainer from "./ItemListContainer";
 import ItemDetailContainer from "./ItemDetailContainer";
-
 import { Routes, Route } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
+import Cart from "./Cart";
 
 function Principal() {
   return (
-    <>
-      <ItemListContainer
-        greeting="Bienvenid@ a nuestra tienda"
-        nombre="Martin"
-      />
-      <ItemDetailContainer/>
-    </>
+    <main>
+      <Routes>
+        <Route
+          path="/landing"
+          element={
+            <ItemListContainer
+              greeting="Bienvenid@ a nuestra tienda"
+              nombre="Martin"
+            />
+          }
+        />
+        <Route path="/categoria/:id" element={<ItemListContainer />} />
+        <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </main>
   );
 }
 

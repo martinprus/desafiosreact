@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { products } from "../assets/productos";
 import { customFetch } from "../assets/customFetch";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState();
   const [loading, setLoading] = useState();
+  const { id } = useParams();
+
 
   function setear(datos) {
-    setProducto(datos[1]);
+    setProducto(datos[id-1]);
   }
 
   useEffect(() => {
