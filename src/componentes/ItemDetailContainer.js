@@ -5,22 +5,28 @@ import { customFetch } from "../assets/customFetch";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState();
-
+  const [loading, setLoading] = useState();
 
   function setear(datos) {
-    setProducto(datos[2])
+    setProducto(datos[1]);
   }
 
   useEffect(() => {
     customFetch(products).then((data) => {
       setear(data);
-      console.log(producto)
+      setLoading(true)
+      console.log(producto);
     });
   }, []);
 
   return (
     <>
-      <ItemDetail  producto = {producto}/>
+      {!loading && (
+        <div className="spinner-border text-dark text-center m-5" role="status">
+          <span className="sr-only m-5">Cargando...</span>
+        </div>
+      )}
+      {loading && <ItemDetail producto={producto} />}
     </>
   );
 };

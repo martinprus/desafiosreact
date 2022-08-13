@@ -1,5 +1,3 @@
-import ItemCount from "./ItemCount"
-
 const Item = ({product}) => {
     
 

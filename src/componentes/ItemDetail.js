@@ -11,6 +11,7 @@ const ItemDetail = (props) => {
         <span>
           <strong>{props.producto.description}</strong>
         </span>
+        <br />
         <ItemCount stock={props.producto.stock} />
       </div>
     </>
