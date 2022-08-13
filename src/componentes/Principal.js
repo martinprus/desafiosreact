@@ -8,7 +8,7 @@ function Principal() {
     <main>
       <Routes>
         <Route
-          path="/landing"
+          path="/"
           element={
             <ItemListContainer
               greeting="Bienvenid@ a nuestra tienda"
