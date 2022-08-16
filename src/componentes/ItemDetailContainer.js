@@ -9,18 +9,18 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState();
   const { id } = useParams();
 
-
   function setear(datos) {
-    setProducto(datos[id-1]);
+    setProducto(datos[id - 1]);
   }
 
   useEffect(() => {
     customFetch(products).then((data) => {
       setear(data);
-      setLoading(true)
-      console.log(producto);
+      setLoading(true);
     });
-  }, []);
+  });
+
+
 
   return (
     <>

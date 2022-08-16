@@ -2,13 +2,15 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-function ItemCount(props) {
+const ItemCount = ({stock , fijarCantidad}) => {
   const [contador, setContador] = useState(0);
-
   const MySwal = withReactContent(Swal);
 
+
+
+
   function aumentarContador() {
-    if (contador < props.stock && props.stock > 0) {
+    if (contador < stock && stock > 0) {
       setContador(contador + 1);
     } else {
       MySwal.fire({
@@ -33,11 +35,11 @@ function ItemCount(props) {
     }
   }
 
-  function resetearContador() {
-    setContador(0);
-  }
+
 
   function onAdd() {
+    fijarCantidad(contador)
+    setContador(0)
     MySwal.fire({
       title: "Elemento/s agregado al carrito!",
       icon: "success",
@@ -47,8 +49,8 @@ function ItemCount(props) {
   return (
     <div className="container text-center mt-5">
       <div className="row text-center ">
-        <p className="lead border border-5">
-          Cantidad: <strong>{contador}</strong>
+        <p className="border border-5">
+          <strong>Cantidad: {contador}</strong>  (stock: {stock})
         </p>
       </div>
       <div className="row">
@@ -63,13 +65,7 @@ function ItemCount(props) {
           </button>
         </div>
       </div>
-      <div className="row">
-        <div className="col">
-          <button onClick={resetearContador} className="btn btn-warning">
-            Resetear Contador
-          </button>
-        </div>
-      </div>
+
 
       <div className="row">
         <div className="col">

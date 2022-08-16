@@ -35,7 +35,7 @@ export const products = [
     category: "camperas",
     description: "Campera de jean trucha",
     stock: 2,
-    precio: 9000,
+    precio: 8000,
   }
   
 ];
