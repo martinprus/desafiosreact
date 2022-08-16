@@ -5,8 +5,8 @@ const Item = ({ product }) => {
 
   return (
     <>
-      <div className="container border rounded m-1 bg-light">
-        <h2>{product.product}</h2>
+      <div className="container border border-3 rounded m-1 bg-light">
+        <h2 className="display-4">{product.product}</h2>
         <img
           className="img"
           src={product.image}
@@ -16,7 +16,7 @@ const Item = ({ product }) => {
         />
         <p className="display-4">${product.precio}</p>
         <p>
-          Categoria: <strong>{product.category}</strong>
+          <u>Categoria</u>:<strong>{product.category}</strong>
         </p>
 
         <Link to={`/detalle/${id}`} className="btn btn-primary my-3">

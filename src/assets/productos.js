@@ -31,7 +31,7 @@ export const products = [
   {
     id: 4,
     image: "https://rosadenena.com.ar/wp-content/uploads/2020/07/glynTLGH.jpeg",
-    product: "Campera de jean",
+    product: "Campera de lana",
     category: "camperas",
     description: "Campera de jean trucha",
     stock: 2,

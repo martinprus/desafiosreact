@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
       setear(data);
       setLoading(true);
     });
-  });
+  },[id]);
 
 
 

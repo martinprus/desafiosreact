@@ -14,15 +14,15 @@ function ItemListContainer(props) {
       setLoading(true);
       setListProducts(data);
     });
-  }, []);
+  }, [id]);
 
-  if(!id){
+  if (!id) {
     return (
       <>
         <div className="container">
-          <div className="row">
-            <h1 className="h1 text-center text-secondary">
-              {props.greeting}:{"  "}
+          <div className="row m-3">
+            <h1 className="h1 text-center">
+              {props.greeting}:{" "}
               <strong className="text-danger">{props.nombre}</strong>
             </h1>
           </div>
@@ -42,12 +42,13 @@ function ItemListContainer(props) {
         </div>
       </>
     );
-  } return (
+  }
+  return (
     <>
       <div className="container">
         <div className="row">
           <h1 className="h1 text-center text-secondary">
-            Categoria: 
+            Categoria:
             <strong className="text-danger"> {id.toUpperCase()}</strong>
           </h1>
         </div>
@@ -61,7 +62,13 @@ function ItemListContainer(props) {
                 <span className="sr-only m-5">Cargando...</span>
               </div>
             )}
-            {loading && <ItemList listProducts={listProducts.filter(product => product.category === id)} />}
+            {loading && (
+              <ItemList
+                listProducts={listProducts.filter(
+                  (product) => product.category === id
+                )}
+              />
+            )}
           </div>
         </div>
       </div>
