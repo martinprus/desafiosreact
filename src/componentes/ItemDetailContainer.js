@@ -5,17 +5,17 @@ import { customFetch } from "../assets/customFetch";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const [producto, setProducto] = useState();
+  const [product, setProduct] = useState();
   const [loading, setLoading] = useState();
   const { id } = useParams();
 
-  function setear(datos) {
-    setProducto(datos[id - 1]);
+  function set(data) {
+    setProduct(data[id - 1]);
   }
 
   useEffect(() => {
     customFetch(products).then((data) => {
-      setear(data);
+      set(data);
       setLoading(true);
     });
   },[id]);
@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
           <span className="sr-only m-5">Cargando...</span>
         </div>
       )}
-      {loading && <ItemDetail producto={producto} />}
+      {loading && <ItemDetail product={product} />}
     </>
   );
 };

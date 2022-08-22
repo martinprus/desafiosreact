@@ -7,7 +7,7 @@ export const products = [
     category: "remeras",
     description: "Remera blanca cuello en v",
     stock: 10,
-    precio: 2500,
+    price: 2500,
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const products = [
     category: "sueteres",
     description: "Sueter gris con estampado",
     stock: 5,
-    precio: 6500,
+    price: 6500,
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const products = [
     category: "camperas",
     description: "Campera de jean denim",
     stock: 3,
-    precio: 12000,
+    price: 12000,
   },
   {
     id: 4,
@@ -35,8 +35,6 @@ export const products = [
     category: "camperas",
     description: "Campera de jean trucha",
     stock: 2,
-    precio: 8000,
-  }
-  
+    price: 8000,
+  },
 ];
-

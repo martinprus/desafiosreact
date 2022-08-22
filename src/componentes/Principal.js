@@ -16,8 +16,8 @@ function Principal() {
             />
           }
         />
-        <Route path="/categoria/:id" element={<ItemListContainer />} />
-        <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+        <Route path="/category/:id" element={<ItemListContainer />} />
+        <Route path="/detail/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </main>

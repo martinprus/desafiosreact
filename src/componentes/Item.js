@@ -14,12 +14,12 @@ const Item = ({ product }) => {
           height="250"
           alt={product.product}
         />
-        <p className="display-4">${product.precio}</p>
+        <p className="display-4">${product.price}</p>
         <p>
           <u>Categoria</u>:<strong>{product.category}</strong>
         </p>
 
-        <Link to={`/detalle/${id}`} className="btn btn-primary my-3">
+        <Link to={`/detail/${id}`} className="btn btn-primary my-3">
           <strong>Ver detalle</strong>
         </Link>
       </div>
