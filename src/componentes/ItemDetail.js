@@ -1,7 +1,6 @@
 import React from "react";
 import ItemCount from "./ItemCount";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { context } from "./CartContext";
 import { useContext } from "react";
 
@@ -10,7 +9,7 @@ const ItemDetail = ({ product }) => {
   const { isInCart, addItem } = useContext(context);
 
   const addQuantity = (value) => {
-    addItem(product, value)
+    addItem(product, value);
     setQuantity(value);
     isInCart(product.id);
   };
@@ -37,9 +36,6 @@ const ItemDetail = ({ product }) => {
             <p className="mt-5 lead">
               <u>Descripción</u>: {product.description}
             </p>
-            <Link className="btn btn-warning mt-3" to="/cart">
-              Finalizar la compra
-            </Link>
           </div>
         </div>
       </div>

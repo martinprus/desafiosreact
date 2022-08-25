@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import {Link} from "react-router-dom";
 
-const ItemCount = ({ stock, addQuantity }) => {
+const ItemCount = ({ stock, addQuantity, setCompra }) => {
   const [counter, setCounter] = useState(0);
+  const [status, setStatus] = useState(false);
+
   const MySwal = withReactContent(Swal);
 
   function aumentarContador() {
@@ -32,7 +35,12 @@ const ItemCount = ({ stock, addQuantity }) => {
     }
   }
 
+  function changeStatus() {
+    setStatus(true);
+  }
+
   function onAdd() {
+    changeStatus();
     addQuantity(counter);
     setCounter(0);
     MySwal.fire({
@@ -63,9 +71,12 @@ const ItemCount = ({ stock, addQuantity }) => {
 
       <div className="row">
         <div className="col">
-          <button onClick={onAdd} className="btn btn-primary  mt-4">
-            Agregar al carrito
-          </button>
+          {!status && (
+            <button onClick={onAdd} className="btn btn-primary  mt-4">
+              Agregar al carrito
+            </button>
+          )}
+          {status && <Link to="/cart" className="btn btn-warning mt-4">Terminar la compra</Link>}
         </div>
       </div>
     </div>

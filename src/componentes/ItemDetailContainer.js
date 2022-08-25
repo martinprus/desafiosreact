@@ -1,26 +1,35 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import { products } from "../assets/productos";
-import { customFetch } from "../assets/customFetch";
 import { useParams } from "react-router-dom";
+import { db } from "./firebase";
+import { collection } from "firebase/firestore";
+import { getDoc, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
+  const productsCollection = collection(db, "products");
+
+  const consulta = getDocs(productsCollection);
+
   const [product, setProduct] = useState();
   const [loading, setLoading] = useState();
   const { id } = useParams();
 
   function set(data) {
-    setProduct(data[id - 1]);
+    const product = data.find((element) => element.id === id);
+    setProduct(product);
   }
 
   useEffect(() => {
-    customFetch(products).then((data) => {
-      set(data);
+    consulta.then((data) => {
+      const productList = data.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+
+      set(productList);
+
       setLoading(true);
     });
-  },[id]);
-
-
+  }, [id]);
 
   return (
     <>

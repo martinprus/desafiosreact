@@ -1,18 +1,26 @@
-import { customFetch } from "../assets/customFetch";
 import { useState, useEffect } from "react";
-import { products } from "../assets/productos";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
+import { db } from "./firebase";
+import { collection } from "firebase/firestore";
+import { getDocs } from "firebase/firestore";
 
 function ItemListContainer(props) {
+  const productsCollection = collection(db, "products");
+
+  const consulta = getDocs(productsCollection);
   const [listProducts, setListProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
-    customFetch(products).then((data) => {
+    consulta.then((snapshot) => {
+      const productList = snapshot.docs.map((doc) => {
+        return {...doc.data(), id: doc.id}
+      });
       setLoading(true);
-      setListProducts(data);
+      setListProducts(productList);
+      console.log(productList);
     });
   }, [id]);
 

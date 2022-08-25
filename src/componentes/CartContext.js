@@ -26,14 +26,13 @@ const CustomProvider = ({ children }) => {
     } else {
       setCart([...cart, newProduct]);
     }
-    console.log(cart);
   };
 
   const removeItem = (id) => {
     return setCart(cart.filter((x) => x.id !== id));
   };
 
-  const clear = () => {
+  const Clear = () => {
     return setCart([]);
   };
 
@@ -48,7 +47,7 @@ const CustomProvider = ({ children }) => {
   const contextValue = {
     cart: cart,
     isInCart,
-    clear,
+    Clear,
     removeItem,
     getItemQty,
     getItemPrice,
