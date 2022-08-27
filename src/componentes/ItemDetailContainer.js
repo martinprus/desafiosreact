@@ -2,33 +2,26 @@ import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { db } from "./firebase";
-import { collection } from "firebase/firestore";
-import { getDoc, getDocs } from "firebase/firestore";
+
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const productsCollection = collection(db, "products");
-
-  const consulta = getDocs(productsCollection);
-
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState();
   const { id } = useParams();
 
-  function set(data) {
-    const product = data.find((element) => element.id === id);
-    setProduct(product);
-  }
-
   useEffect(() => {
-    consulta.then((data) => {
-      const productList = data.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
+    const docuRef = doc(db, "products", id);
+    const request = getDoc(docuRef);
+    request
+      .then((res) => {
+        setProduct(res.data());
+      })
+      .catch((error) => {
+        console.log(error);
       });
 
-      set(productList);
-
-      setLoading(true);
-    });
+    setLoading(true);
   }, [id]);
 
   return (
