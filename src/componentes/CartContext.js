@@ -12,7 +12,9 @@ const CustomProvider = ({ children }) => {
   };
 
   const addItem = (product, quantity) => {
+    console.log(cart)
     const newProduct = {
+      ...product.id,
       ...product,
       quantity,
     };

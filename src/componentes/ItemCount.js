@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({ stock, addQuantity, setCompra }) => {
   const [counter, setCounter] = useState(0);
@@ -76,7 +76,11 @@ const ItemCount = ({ stock, addQuantity, setCompra }) => {
               Agregar al carrito
             </button>
           )}
-          {status && <Link to="/cart" className="btn btn-warning mt-4">Terminar la compra</Link>}
+          {status && (
+            <Link to="/cart" className="btn btn-warning mt-4">
+              Ir al carrito
+            </Link>
+          )}
         </div>
       </div>
     </div>

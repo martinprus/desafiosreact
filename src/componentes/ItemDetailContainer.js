@@ -15,7 +15,9 @@ const ItemDetailContainer = () => {
     const request = getDoc(docuRef);
     request
       .then((res) => {
-        setProduct(res.data());
+        const item = res.data();
+        item.id = res.id;
+        setProduct(item);
       })
       .catch((error) => {
         console.log(error);
