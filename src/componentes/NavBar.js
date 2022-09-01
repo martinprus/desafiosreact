@@ -3,9 +3,18 @@ import CartWidget from "./CartWidget";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { context } from "./CartContext";
+import { db } from "./firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 function NavBar() {
   const { cart } = useContext(context);
+  const productsCollection = collection(db, "products");
+
+  const consulta = getDocs(productsCollection);
+  consulta.then((snapshot) => {
+    const productList = snapshot.docs.map((doc) => {});
+  });
+
   return (
     <nav className="navbar navbar-light d-flex justify-content-end">
       <NavLink
