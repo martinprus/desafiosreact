@@ -8,7 +8,7 @@ function Header() {
         <Link to="/">
         <img
           className="img-fluid m-3 d-inline"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcWI0LV5RKj65bxXyONI4PGpiB1CAooramPHlMUZZG6DwflMDNChS3rwIDNNWC4dAYh1w&usqp=CAU"
+          src="https://thumbs.dreamstime.com/b/vector-logo-game-pad-store-173837591.jpg"
           alt=""
           width="160"
           height="160"
