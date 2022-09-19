@@ -36,33 +36,39 @@ function ItemListContainer(props) {
 
   return (
     <>
-      <div className="container">
-        <div className="row m-3">
-          {!id && (
-            <h1 className="h1 text-center">
-              {props.greeting}:{" "}
-              <strong className="text-danger">{props.nombre}</strong>
-            </h1>
-          )}
+      <div className=" py-5">
+        <div>
           {id && (
             <h1 className="h1 text-center">
-              Categoria:{"  "}
-              <strong className="text-danger">{id.toUpperCase()}</strong>
+              Plataforma:{"  "}
+              <strong
+                className={
+                  id === "xbox"
+                    ? "text-success"
+                    : id === "playstation"
+                    ? "text-primary"
+                    : "text-danger"
+                }
+              >
+                {id.toUpperCase()}
+              </strong>
             </h1>
           )}
         </div>
-        <div className="row">
-          <div className="col d-flex text-center">
-            {!loading && (
-              <div
-                className="spinner-border text-dark text-center m-5"
-                role="status"
-              >
-                <span className="sr-only m-5">Cargando...</span>
-              </div>
-            )}
-            {loading && <ItemList listProducts={listProducts} />}
-          </div>
+        <div>
+          {!loading && (
+            <div
+              className="spinner-border text-dark text-center m-5"
+              role="status"
+            >
+              <span className="sr-only m-5">Cargando...</span>
+            </div>
+          )}
+          {loading && (
+            <div className="container-fluid d-flex flex-row flex-wrap justify-content-center align-items-center">
+              <ItemList listProducts={listProducts} />
+            </div>
+          )}
         </div>
       </div>
     </>

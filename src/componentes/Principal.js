@@ -5,17 +5,9 @@ import Cart from "./Cart";
 
 function Principal() {
   return (
-    <main>
+    <main className="bg-secondary p-5">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <ItemListContainer
-              greeting="Bienvenid@ a nuestra tienda"
-              nombre="Martin"
-            />
-          }
-        />
+        <Route path="/" element={<ItemListContainer />} />
         <Route path="/category/:id" element={<ItemListContainer />} />
         <Route path="/detail/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />

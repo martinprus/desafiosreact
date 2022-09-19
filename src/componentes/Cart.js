@@ -68,7 +68,7 @@ const Cart = () => {
   if (cart.length > 0) {
     return (
       <>
-        <div className="row">
+        <div className="row container-fluid text-white">
           <div className="col-8 p-3">
             {cart.map((product) => (
               <CartItem key={product.id} product={product} />
@@ -76,6 +76,7 @@ const Cart = () => {
             <p className="h2 text-center">
               Total a pagar: <strong>${getItemPrice()}</strong>
             </p>
+            <div className="d-flex flex-row justify-content-center">
             <button onClick={Clear} className="btn btn-lg btn-warning m-5">
               Limpiar Carrito
             </button>
@@ -85,28 +86,26 @@ const Cart = () => {
             >
               Realizar checkout
             </button>
+            </div>
           </div>
           {checkout && (
-            <div className="col-4 p-3">
-              <input
-                onChange={handleChangeName}
-                type="text"
-                placeholder="Nombre y apellido"
-              />
-              <br />
-              <input
-                onChange={handleChangeMail}
-                type="email"
-                placeholder="Correo electronico"
-              />
-              <br />
-              <input
-                onChange={handleChangePhone}
-                type="number"
-                placeholder="Numero de teléfono"
-              />{" "}
-              <br />
-              <button onClick={sendOrder} className="btn btn-lg btn-primary">
+            <div className="col-4 p-3 text-center border rounded mt-4">
+              <div className="d-flex flex-row align-items-center justify-content-center m-2">
+                <h4 className="pt-1">Nombre completo: </h4>
+                <input onChange={handleChangeName} type="text" />
+              </div>
+              <div className="d-flex flex-row align-items-center justify-content-center m-2">
+                <h4 className="pt-1">E-mail: </h4>
+                <input onChange={handleChangeMail} type="email" />
+              </div>
+              <div className="d-flex flex-row align-items-center justify-content-center m-2">
+                <h4 className="pt-1">Teléfono: </h4>
+                <input onChange={handleChangePhone} type="number" />{" "}
+              </div>
+              <button
+                onClick={sendOrder}
+                className="btn btn-lg btn-primary mt-5"
+              >
                 {" "}
                 Confirmar compra{" "}
               </button>

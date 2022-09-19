@@ -4,7 +4,7 @@ import withReactContent from "sweetalert2-react-content";
 import { Link } from "react-router-dom";
 
 const ItemCount = ({ stock, addQuantity, setCompra }) => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const [status, setStatus] = useState(false);
 
   const MySwal = withReactContent(Swal);
@@ -52,19 +52,25 @@ const ItemCount = ({ stock, addQuantity, setCompra }) => {
   return (
     <div className="container text-center mt-5">
       <div className="row text-center ">
-        <p className="border border-5">
+        <p className="border border-3 p-3">
           <strong>Cantidad: {counter}</strong> (stock: {stock})
         </p>
       </div>
       <div className="row">
         <div className="col-6">
-          <button onClick={disminuirContador} className="btn btn-danger m-1">
-            Disminuir Contador
+          <button
+            onClick={disminuirContador}
+            className="btn btn-lg btn-danger m-1 px-5"
+          >
+            -
           </button>
         </div>
         <div className="col-6">
-          <button onClick={aumentarContador} className="btn btn-success m-1">
-            Aumentar Contador
+          <button
+            onClick={aumentarContador}
+            className="btn btn-lg btn-success m-1 px-5"
+          >
+            +
           </button>
         </div>
       </div>

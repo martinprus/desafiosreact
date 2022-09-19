@@ -16,22 +16,27 @@ const ItemDetail = ({ product }) => {
 
   return (
     <>
-      <div className="container text-center">
-        <div className="row m-1">
+      <div className="container text-center border border-3 border-light p-4 bg-dark text-white">
+        <div className="row m-1 p-2">
           <div className="col">
             <h1 className="h1">{product.product}</h1>
           </div>
         </div>
-        <div className="row">
-          <div className="col-6 border border-3 border-success">
-            <img src={product.image} height="400" width="400" alt="" />
-            <p>Cantidad en el carrito: {quantity}</p>
+        <div className="row py-5">
+          <div className="col-6">
+            <img
+              className="img p-3 border"
+              src={product.image}
+              height="400"
+              width="400"
+              alt=""
+            />
+
             <div>
-              <strong> {product.product}</strong>
-              <p className="h2">${product.price}</p>
+              <p className="h2 mt-3">Precio: ${product.price}</p>            
             </div>
           </div>
-          <div className="col-6 border border-3 border-success">
+          <div className="col-6 ">
             <ItemCount stock={product.stock} addQuantity={addQuantity} />
             <p className="mt-5 lead">
               <u>Descripción</u>: {product.description}
